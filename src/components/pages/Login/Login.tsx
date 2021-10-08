@@ -1,8 +1,37 @@
-import React, { useState } from "react";
-import { Iform } from "../../intefaces";
+import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
+import { useMutation } from "react-query";
+
+import { IForm } from "../../../intefaces";
+import { ADD_LOGIN, useLoginContext } from "../Login/contextLogin/LoginContext";
+
+const fetchLogin = async (form: IForm) => {
+  const response = await fetch("https://reqres.in/api/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify(form),
+  });
+
+  let resultOfFetching = await response.json();
+  if (resultOfFetching !== "") {
+    localStorage.setItem("token", JSON.stringify(resultOfFetching.token));
+  }
+  return resultOfFetching;
+};
 
 export const Login: React.FC = () => {
-  const [form, setForm] = useState<Iform>({ email: "", password: "" });
+  const [form, setForm] = useState<IForm>({ email: "", password: "" });
+  const mutation = useMutation(fetchLogin);
+
+  const { dispatch } = useLoginContext();
+
+  useEffect(() => {
+    if (mutation.data) {
+      dispatch({ type: ADD_LOGIN, payload: mutation.data.token });
+    }
+  }, [dispatch, mutation.isSuccess, mutation.data]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -11,11 +40,12 @@ export const Login: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    console.log(form);
+    mutation.mutate(form);
   };
 
   return (
     <>
+      {mutation.isSuccess === true && <Redirect to="/" />}
       <h1>Страница авторизации</h1>
       <div className="row">
         <form className="col s12" onSubmit={handleSubmit}>
