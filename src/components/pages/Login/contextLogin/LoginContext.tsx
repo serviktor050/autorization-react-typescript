@@ -4,11 +4,13 @@ import { ILoginContext } from "../../../../intefaces";
 
 /*Констаты */
 export const ADD_LOGIN: string = "ADD_LOGIN";
+export const REMOVE_LOGIN: string = "REMOVE_LOGIN";
 
 /*Создание контекста */
 export const LoginContext = createContext<ILoginContext>({
-  userToken: null,
+  userToken: "",
   addLogin: (token: string) => {},
+  removeLogin: () => {},
   dispatch: () => {},
 });
 
@@ -19,7 +21,7 @@ export const useLoginContext = () => {
 
 /*Создание редьюсера */
 const reducer = (
-  state: { userToken: string | null },
+  state: { userToken: string },
   action: { type: string; payload: string }
 ) => {
   switch (action.type) {
@@ -27,6 +29,12 @@ const reducer = (
       return {
         ...state,
         userToken: action.payload,
+      };
+    case REMOVE_LOGIN:
+      localStorage.setItem("token", "");
+      return {
+        ...state,
+        userToken: "",
       };
     default:
       return state;
@@ -36,15 +44,17 @@ const reducer = (
 /*Создание основного компонента */
 export const LoginContextProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, {
-    userToken: null,
+    userToken: "",
   });
 
   const addLogin = (token: string) =>
     dispatch({ type: ADD_LOGIN, payload: token });
 
+  const removeLogin = () => dispatch({ type: REMOVE_LOGIN, payload: "" });
+
   return (
     <LoginContext.Provider
-      value={{ userToken: state.userToken, addLogin, dispatch }}
+      value={{ userToken: state.userToken, addLogin, removeLogin, dispatch }}
     >
       {children}
     </LoginContext.Provider>

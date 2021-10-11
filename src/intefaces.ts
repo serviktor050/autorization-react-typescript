@@ -6,8 +6,9 @@ export interface IForm {
 }
 
 export interface ILoginContext {
-  userToken: string | null;
+  userToken: string;
   addLogin: (token: string) => void;
+  removeLogin: () => void;
   dispatch:
     | Dispatch<{
         type: string;
