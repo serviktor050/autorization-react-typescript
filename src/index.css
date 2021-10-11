@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 code {
@@ -22,4 +23,8 @@ nav #nav-mobile {
 
 .navbar-logout {
   background-color: red;
+}
+
+.page-container {
+  min-height: 72.8vh;
 }

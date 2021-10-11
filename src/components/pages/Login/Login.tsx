@@ -44,7 +44,7 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <>
+    <div className="page-container">
       {mutation.isSuccess === true && <Redirect to="/" />}
       <h1>Страница авторизации</h1>
       <div className="row">
@@ -85,6 +85,6 @@ export const Login: React.FC = () => {
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 };

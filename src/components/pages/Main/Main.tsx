@@ -6,7 +6,7 @@ export const Main: React.FC = () => {
   );
 
   return (
-    <>
+    <div className="page-container">
       {userTokenLocalStorage && (
         <>
           <h1>Главная страница</h1>
@@ -20,6 +20,6 @@ export const Main: React.FC = () => {
           <p>Пройдите авторизацию!</p>
         </>
       )}
-    </>
+    </div>
   );
 };

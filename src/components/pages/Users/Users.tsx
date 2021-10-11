@@ -7,7 +7,7 @@ export const Users: React.FC = () => {
   );
 
   return (
-    <>
+    <div className="page-container">
       {userTokenLocalStorage && (
         <>
           <h1>Пользователи</h1>
@@ -15,6 +15,6 @@ export const Users: React.FC = () => {
       )}
 
       {!userTokenLocalStorage && <Redirect to="/login" />}
-    </>
+    </div>
   );
 };
