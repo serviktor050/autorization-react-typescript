@@ -16,3 +16,13 @@ export interface ILoginContext {
       }>
     | VoidFunction;
 }
+
+export interface IUseQuery {
+  userToken: string;
+  addLogin: (token: string) => void;
+  removeLogin: () => void;
+}
+
+export interface IQueryKey {
+  queryKey: string | unknown[];
+}
