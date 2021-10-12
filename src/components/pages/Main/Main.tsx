@@ -9,15 +9,15 @@ export const Main: React.FC = () => {
     <div className="page-container">
       {userTokenLocalStorage && (
         <>
-          <h1>Главная страница</h1>
-          <p>Вы авторизовались!</p>
+          <h1>Main Page</h1>
+          <p>You have logged in!</p>
         </>
       )}
 
       {!userTokenLocalStorage && (
         <>
-          <h1>Главная страница</h1>
-          <p>Пройдите авторизацию!</p>
+          <h1>Main Page</h1>
+          <p>Go through authorization!</p>
         </>
       )}
     </div>

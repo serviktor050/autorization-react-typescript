@@ -21,12 +21,12 @@ export const Navbar: React.FC = () => {
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
                 <NavLink to="/" activeClassName="active">
-                  Главная
+                  Main
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/users" activeClassName="active">
-                  Пользователи
+                  Users
                 </NavLink>
               </li>
               <li>
@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
                   activeClassName="active"
                   onClick={() => removeLogin()}
                 >
-                  Выйти
+                  Go away
                 </NavLink>
               </li>
             </ul>
@@ -53,7 +53,7 @@ export const Navbar: React.FC = () => {
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
                 <NavLink to="/login" activeClassName="active">
-                  Авторизация
+                  Authorization
                 </NavLink>
               </li>
             </ul>

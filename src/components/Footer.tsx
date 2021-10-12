@@ -15,12 +15,12 @@ export const Footer: React.FC = () => {
             <ul>
               <li>
                 <NavLink to="/" className="grey-text text-lighten-3">
-                  Главная
+                  Main
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/users" className="grey-text text-lighten-3">
-                  Пользователи
+                  Users
                 </NavLink>
               </li>
             </ul>

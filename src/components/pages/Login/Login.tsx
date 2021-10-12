@@ -46,7 +46,7 @@ export const Login: React.FC = () => {
   return (
     <div className="page-container">
       {mutation.isSuccess === true && <Redirect to="/" />}
-      <h1>Страница авторизации</h1>
+      <h1>Authorization</h1>
       <div className="row">
         <form className="col s12" onSubmit={handleSubmit}>
           <div className="row">

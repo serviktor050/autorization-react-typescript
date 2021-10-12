@@ -13,12 +13,22 @@ const fetchUsers = async (key: IQueryKey) => {
   return res.json();
 };
 
-export const Users: React.FC = () => {
+type Props = {
+  history: {};
+  location: {
+    search: string;
+  };
+  match: {};
+};
+
+export const Users: React.FC<Props> = (props) => {
   const userTokenLocalStorage = JSON.parse(
     JSON.stringify(localStorage.getItem("token"))
   );
 
-  const [page, setPage] = useState(1);
+  let pageNumber: string = props.location.search.substr(6);
+
+  const [page, setPage] = useState(pageNumber || 1);
   const { data, status } = useQuery(["users", page], fetchUsers, {
     keepPreviousData: true,
   });
@@ -74,7 +84,7 @@ export const Users: React.FC = () => {
     <div className="page-container">
       {userTokenLocalStorage && (
         <>
-          <h1>Пользователи</h1>
+          <h1>Users</h1>
           {status === "loading" && <div>Loading data...</div>}
           {status === "error" && <div>Error fetching data</div>}
           {status === "success" && (
@@ -84,7 +94,6 @@ export const Users: React.FC = () => {
                 dataSource={updateData}
                 pagination={false}
                 onRow={(record: IUpdateData) => {
-                  console.log(record);
                   return {
                     onClick: (event) => {
                       return history.push(`/users/user-${record.id}`);
@@ -92,6 +101,38 @@ export const Users: React.FC = () => {
                   };
                 }}
               ></Table>
+              {data.page === 1 && (
+                <div className="pagination-list-users">
+                  <div className="page-list-users">{data.page}</div>
+                  <div
+                    className="up-list-users"
+                    onClick={() => {
+                      setPage((data.page += 1));
+                      history.push(`/users?page=${data.page}`);
+                    }}
+                  >
+                    +
+                  </div>
+                </div>
+              )}
+              {data.page === data.total_pages && (
+                <div className="pagination-list-users">
+                  <div
+                    className="down-list-users"
+                    onClick={() => {
+                      setPage((data.page -= 1));
+                      if (data.page === 1) {
+                        history.push(`/users`);
+                      } else {
+                        history.push(`/users?page=${data.page}`);
+                      }
+                    }}
+                  >
+                    -
+                  </div>
+                  <div className="page-list-users">{data.page}</div>
+                </div>
+              )}
             </>
           )}
         </>
