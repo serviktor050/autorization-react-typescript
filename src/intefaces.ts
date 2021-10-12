@@ -26,3 +26,12 @@ export interface IUseQuery {
 export interface IQueryKey {
   queryKey: string | unknown[];
 }
+
+export interface IUpdateData {
+  id: number;
+  avatar: string;
+  email: string;
+  first_name: string;
+  last_name: string;
+  key: string;
+}

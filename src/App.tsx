@@ -8,6 +8,7 @@ import { Login } from "./components/pages/Login/Login";
 import { Main } from "./components/pages/Main/Main";
 import { LoginContextProvider } from "./components/pages/Login/contextLogin/LoginContext";
 import { Users } from "./components/pages/Users/Users";
+import { User } from "./components/pages/User/User";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           <Navbar />
           <div className="container">
             <Switch>
+              <Route component={User} path="/users/user-:id" />
               <Route component={Users} path="/users" />
               <Route component={Login} path="/login" />
               <Route component={Main} path="/" exact />
