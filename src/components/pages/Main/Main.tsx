@@ -1,4 +1,5 @@
 import React from "react";
+import { SliderComponent } from "../../SliderComponent";
 
 export const Main: React.FC = () => {
   const userTokenLocalStorage = JSON.parse(
@@ -11,6 +12,7 @@ export const Main: React.FC = () => {
         <>
           <h1>Main Page</h1>
           <p>You have logged in!</p>
+          <SliderComponent />
         </>
       )}
 
