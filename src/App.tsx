@@ -9,6 +9,7 @@ import { Main } from "./components/pages/Main/Main";
 import { LoginContextProvider } from "./components/pages/Login/contextLogin/LoginContext";
 import { Users } from "./components/pages/Users/Users";
 import { User } from "./components/pages/User/User";
+import { Todos } from "./components/pages/Todos/Todos";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App: React.FC = () => {
           <Navbar />
           <div className="container">
             <Switch>
+              <Route component={Todos} path="/todos" />
               <Route component={User} path="/users/user-:id" />
               <Route component={Users} path="/users" />
               <Route component={Login} path="/login" />

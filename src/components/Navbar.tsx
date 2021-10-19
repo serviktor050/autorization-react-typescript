@@ -30,6 +30,11 @@ export const Navbar: React.FC = () => {
                 </NavLink>
               </li>
               <li>
+                <NavLink to="/todos" activeClassName="active">
+                  Todos
+                </NavLink>
+              </li>
+              <li>
                 <NavLink
                   to="/login"
                   className="navbar-logout"

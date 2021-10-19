@@ -23,6 +23,11 @@ export const Footer: React.FC = () => {
                   Users
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/todos" className="grey-text text-lighten-3">
+                  Todos
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

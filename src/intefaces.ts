@@ -35,3 +35,9 @@ export interface IUpdateData {
   last_name: string;
   key: string;
 }
+
+export interface ITodo {
+  title: string;
+  id: number;
+  completed: boolean;
+}
