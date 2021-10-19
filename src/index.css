@@ -113,3 +113,11 @@ nav #nav-mobile {
   padding: 1rem;
   background: #f3f3f3;
 }
+
+.todo.completed span {
+  text-decoration: line-through;
+}
+
+.todo i {
+  z-index: 2;
+}
