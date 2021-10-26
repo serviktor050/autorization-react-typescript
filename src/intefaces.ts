@@ -41,3 +41,14 @@ export interface ITodo {
   id: number;
   completed: boolean;
 }
+
+export interface IWeatherContext {
+  city: string;
+  addCity: (city: string) => void;
+  dispatch:
+    | Dispatch<{
+        type: string;
+        payload: string;
+      }>
+    | VoidFunction;
+}
