@@ -36,13 +36,13 @@ export const WeatherInformation: React.FC<Props> = (props) => {
           <p>Сегодня в городе {weather[0].description}!</p>
           <p>
             Ожидается температура от {main.temp_min.toFixed()} до{" "}
-            {main.temp_max.toFixed()} градусов Цельсия.
+            {main.temp_max.toFixed()} ℃.
           </p>
           <p>
-            Сейчас за окном {main.temp.toFixed()} градусов Цельсия. Ощущается
-            как {main.feels_like.toFixed()} градусов.
+            Сейчас за окном {main.temp.toFixed()} ℃. Ощущается как{" "}
+            {main.feels_like.toFixed()} ℃.
           </p>
-          <p>Скорость ветра {wind.speed.toFixed()} м/с.</p>
+          <p>Скорость ветра: {wind.speed.toFixed()} м/с.</p>
         </>
       )}
     </>
