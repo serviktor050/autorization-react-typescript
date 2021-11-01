@@ -29,7 +29,7 @@ export const WeatherInformation: React.FC<Props> = (props) => {
 
   return (
     <>
-      {!city && <div>Город не указан</div>}
+      {!city && <div>The city is not specified!</div>}
       {city && (
         <>
           <h2>{name}</h2>

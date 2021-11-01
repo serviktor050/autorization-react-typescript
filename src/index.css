@@ -19,6 +19,12 @@ p {
   text-align: justify;
 }
 
+.page-container {
+  min-height: 72.8vh;
+}
+
+/*Navigation panel*/
+
 nav .brand-logo {
   padding-left: 2rem;
 }
@@ -31,34 +37,7 @@ nav #nav-mobile {
   background-color: red;
 }
 
-.page-container {
-  min-height: 72.8vh;
-}
-
-.user-card {
-  display: flex;
-  margin-bottom: 2%;
-}
-
-.user-image {
-  width: 150px;
-  height: 150px;
-  margin-right: 2%;
-}
-
-.user-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.user-info {
-  width: 300px;
-}
-
-.user-info p {
-  font-weight: bold;
-}
+/*Users*/
 
 .pagination-list-users {
   display: flex;
@@ -96,10 +75,34 @@ nav #nav-mobile {
   align-items: center;
 }
 
-.banner {
-  margin-left: 10%;
+/*User*/
+
+.user-card {
+  display: flex;
+  margin-bottom: 2%;
 }
 
+.user-image {
+  width: 150px;
+  height: 150px;
+  margin-right: 2%;
+}
+
+.user-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.user-info {
+  width: 300px;
+}
+
+.user-info p {
+  font-weight: bold;
+}
+
+/*Todos*/
 .todo {
   margin-bottom: 1rem;
 }

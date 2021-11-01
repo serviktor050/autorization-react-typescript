@@ -35,6 +35,33 @@ export const Main: React.FC = () => {
             quam rem molestiae magnam earum voluptatem. Laborum dolore deserunt
             accusantium velit eveniet, quo obcaecati cumque.
           </p>
+          <h2>Veniam rerum</h2>
+          <p>
+            Veniam rerum totam molestiae tempore deserunt, accusantium ex quae
+            consequatur dolorum id. Vitae necessitatibus dolores voluptates
+            suscipit adipisci ab doloribus natus inventore delectus eveniet at
+            expedita quos nesciunt dolore omnis sapiente magni, fugit, quisquam
+            perspiciatis amet optio doloremque? Explicabo ut corporis aliquam
+            maxime obcaecati repellat facilis, officia quis iure suscipit
+            dignissimos optio beatae, aspernatur error minus neque consequatur
+            esse fugiat sit eum! Eum, perferendis, perspiciatis corrupti totam
+            suscipit repellat cum architecto reprehenderit molestias enim odio
+            quam rem molestiae magnam earum voluptatem. Laborum dolore deserunt
+            accusantium velit eveniet, quo obcaecati cumque.
+          </p>
+          <p>
+            Veniam rerum totam molestiae tempore deserunt, accusantium ex quae
+            consequatur dolorum id. Vitae necessitatibus dolores voluptates
+            suscipit adipisci ab doloribus natus inventore delectus eveniet at
+            expedita quos nesciunt dolore omnis sapiente magni, fugit, quisquam
+            perspiciatis amet optio doloremque? Explicabo ut corporis aliquam
+            maxime obcaecati repellat facilis, officia quis iure suscipit
+            dignissimos optio beatae, aspernatur error minus neque consequatur
+            esse fugiat sit eum! Eum, perferendis, perspiciatis corrupti totam
+            suscipit repellat cum architecto reprehenderit molestias enim odio
+            quam rem molestiae magnam earum voluptatem. Laborum dolore deserunt
+            accusantium velit eveniet, quo obcaecati cumque.
+          </p>
         </>
       )}
 
