@@ -20,7 +20,6 @@ export const Main: React.FC = () => {
             sed. Itaque sunt consectetur voluptas maiores consequuntur? Maiores
             reprehenderit repudiandae aperiam soluta incidunt eum qui ratione?
           </p>
-          <SliderComponent />
           <h2>Veniam rerum</h2>
           <p>
             Veniam rerum totam molestiae tempore deserunt, accusantium ex quae
@@ -35,6 +34,7 @@ export const Main: React.FC = () => {
             quam rem molestiae magnam earum voluptatem. Laborum dolore deserunt
             accusantium velit eveniet, quo obcaecati cumque.
           </p>
+          <SliderComponent />
           <h2>Veniam rerum</h2>
           <p>
             Veniam rerum totam molestiae tempore deserunt, accusantium ex quae

@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import { useLoginContext } from "../components/pages/Login/contextLogin/LoginContext";
+import { Time } from "./Time";
 
 export const Navbar: React.FC = () => {
   const { removeLogin } = useLoginContext();
@@ -19,6 +20,9 @@ export const Navbar: React.FC = () => {
               TS Tutorial
             </NavLink>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
+              <li>
+                <Time />
+              </li>
               <li>
                 <NavLink to="/" activeClassName="active">
                   Main

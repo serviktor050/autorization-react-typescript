@@ -52,3 +52,7 @@ export interface IWeatherContext {
       }>
     | VoidFunction;
 }
+
+export interface ITime {
+  time: string;
+}

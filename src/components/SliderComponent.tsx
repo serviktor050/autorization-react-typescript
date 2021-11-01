@@ -5,32 +5,32 @@ export const SliderComponent: React.FC = () => {
   const slides = [
     {
       id: 1,
-      img: "https://img4.goodfon.ru/original/1280x720/f/4f/nature-priroda-peizazh-1.jpg",
+      img: "https://images.wallpaperscraft.ru/image/single/reka_holmy_bereg_224563_1280x720.jpg",
       title: "Picture 1",
     },
     {
       id: 2,
-      img: "https://img5.goodfon.ru/original/1280x720/6/ea/gory-zima-sneg-sklony.jpg",
+      img: "https://images.wallpaperscraft.ru/image/single/reka_bereg_derevia_202433_1280x720.jpg",
       title: "Picture 2",
     },
     {
       id: 3,
-      img: "https://img5.goodfon.ru/original/1280x720/a/35/kaliforniia-ssha-okean-priroda-bereg-solntse-skaly.jpg",
+      img: "https://images.wallpaperscraft.ru/image/single/reka_bereg_derevia_169432_1280x720.jpg",
       title: "Picture 3",
     },
     {
       id: 4,
-      img: "https://img4.goodfon.ru/original/1280x720/6/87/spring-park-vesna-park-priroda-nature.jpg",
+      img: "https://images.wallpaperscraft.ru/image/single/reka_bereg_derevia_162056_1280x720.jpg",
       title: "Picture 4",
     },
     {
       id: 5,
-      img: "https://img5.goodfon.ru/original/1280x720/b/a9/more-bereg-zakat-18.jpg",
+      img: "https://images.wallpaperscraft.ru/image/single/reka_skaly_derevia_191359_1280x720.jpg",
       title: "Picture 5",
     },
     {
       id: 6,
-      img: "https://img3.goodfon.ru/original/1280x720/2/ef/nebo-oblaka-gory-cvety-4025.jpg",
+      img: "https://images.wallpaperscraft.ru/image/single/reka_skaly_derevia_196000_1280x720.jpg",
       title: "Picture 6",
     },
   ];

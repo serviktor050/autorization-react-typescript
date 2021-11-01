@@ -37,6 +37,11 @@ nav #nav-mobile {
   background-color: red;
 }
 
+.time {
+  padding-right: 4rem;
+  font-size: 18px;
+}
+
 /*Users*/
 
 .pagination-list-users {
@@ -75,6 +80,9 @@ nav #nav-mobile {
   align-items: center;
 }
 
+.ant-table-row {
+  cursor: pointer;
+}
 /*User*/
 
 .user-card {
