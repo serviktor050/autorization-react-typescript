@@ -15,20 +15,21 @@ export const Weather: React.FC = () => {
   const { city } = useWeatherContext();
 
   const fetchWeather = async (key: IQueryKey) => {
-    const res = await fetch(
+    return fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&units=metric&appid=${apiKeyForWeather}`,
       {
-        mode: "no-cors",
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
+        mode: "cors",
+        // headers: {
+        //   "Access-Control-Allow-Origin": "*",
+        // },
       }
-    );
-    return res.json();
+    ).then((response) => {
+      console.log(response);
+      return response.json();
+    });
   };
 
   const { data, status } = useQuery(["city", city], fetchWeather);
-  console.log(status);
 
   return (
     <div className="page-container">
