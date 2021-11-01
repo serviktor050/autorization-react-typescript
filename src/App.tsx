@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 import { LoginContextProvider } from "./components/pages/Login/contextLogin/LoginContext";
@@ -19,7 +19,7 @@ const App: React.FC = () => {
   return (
     <LoginContextProvider>
       <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
+        <Router>
           <Navbar />
           <div className="container">
             <Switch>
@@ -37,7 +37,7 @@ const App: React.FC = () => {
             </Switch>
           </div>
           <Footer />
-        </BrowserRouter>
+        </Router>
       </QueryClientProvider>
     </LoginContextProvider>
   );

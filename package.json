@@ -2,6 +2,7 @@
   "name": "autorization-react-typescript",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://serviktor050.github.io/autorization-react-typescript/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
