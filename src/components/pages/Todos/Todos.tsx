@@ -6,7 +6,7 @@ import { ITodo } from "../../../intefaces";
 declare var confirm: (question: string) => boolean;
 
 export const Todos: React.FC = () => {
-  const userTokenLocalStorage = JSON.parse(
+  const userTokenLocalStorage: string = JSON.parse(
     JSON.stringify(localStorage.getItem("token"))
   );
 

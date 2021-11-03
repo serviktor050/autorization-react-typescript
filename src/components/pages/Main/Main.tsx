@@ -1,8 +1,10 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+
 import { SliderComponent } from "../../SliderComponent";
 
 export const Main: React.FC = () => {
-  const userTokenLocalStorage = JSON.parse(
+  const userTokenLocalStorage: string = JSON.parse(
     JSON.stringify(localStorage.getItem("token"))
   );
 
@@ -64,13 +66,7 @@ export const Main: React.FC = () => {
           </p>
         </>
       )}
-
-      {!userTokenLocalStorage && (
-        <>
-          <h1>Main Page</h1>
-          <p>Go through authorization!</p>
-        </>
-      )}
+      {!userTokenLocalStorage && <Redirect to="/login" />}
     </div>
   );
 };

@@ -3,11 +3,12 @@ import { NavLink } from "react-router-dom";
 
 import { useLoginContext } from "../components/pages/Login/contextLogin/LoginContext";
 import { Time } from "./Time";
+import { GoogleSignIn } from "../components/GoogleSignIn";
 
 export const Navbar: React.FC = () => {
   const { removeLogin } = useLoginContext();
 
-  const userTokenLocalStorage = JSON.parse(
+  const userTokenLocalStorage: string = JSON.parse(
     JSON.stringify(localStorage.getItem("token"))
   );
 
@@ -66,9 +67,7 @@ export const Navbar: React.FC = () => {
             </NavLink>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
-                <NavLink to="/login" activeClassName="active">
-                  Authorization
-                </NavLink>
+                <GoogleSignIn />
               </li>
             </ul>
           </div>

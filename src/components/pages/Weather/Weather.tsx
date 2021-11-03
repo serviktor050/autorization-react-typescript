@@ -8,7 +8,7 @@ import { WeatherInformation } from "../../Weather/WeatherInformation";
 import { useWeatherContext } from "../Weather/contextWeather/WeatherContext";
 
 export const Weather: React.FC = () => {
-  const userTokenLocalStorage = JSON.parse(
+  const userTokenLocalStorage: string = JSON.parse(
     JSON.stringify(localStorage.getItem("token"))
   );
 

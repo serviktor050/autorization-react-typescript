@@ -20,7 +20,7 @@ const fetchUser = async (key: IQueryKey) => {
 };
 
 export const User: React.FC<Props> = (props) => {
-  const userTokenLocalStorage = JSON.parse(
+  const userTokenLocalStorage: string = JSON.parse(
     JSON.stringify(localStorage.getItem("token"))
   );
 

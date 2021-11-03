@@ -28,7 +28,6 @@ const App: React.FC = () => {
                   <Weather />
                 </WeatherContextProvider>
               </Route>
-
               <Route component={Todos} path="/todos" />
               <Route component={User} path="/users/user-:id" />
               <Route component={Users} path="/users" />

@@ -22,7 +22,7 @@ type Props = {
 };
 
 export const Users: React.FC<Props> = (props) => {
-  const userTokenLocalStorage = JSON.parse(
+  const userTokenLocalStorage: string = JSON.parse(
     JSON.stringify(localStorage.getItem("token"))
   );
 
