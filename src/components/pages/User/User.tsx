@@ -24,6 +24,12 @@ export const User: React.FC<Props> = (props) => {
     JSON.stringify(localStorage.getItem("token"))
   );
 
+  const googleIdLocalStorage: string = JSON.parse(
+    JSON.stringify(localStorage.getItem("googleId"))
+  );
+
+  const isAuth = userTokenLocalStorage || googleIdLocalStorage;
+
   const id: number = Number(props.match.params.id);
 
   const { data, status } = useQuery(["user", id], fetchUser);
@@ -31,7 +37,7 @@ export const User: React.FC<Props> = (props) => {
 
   return (
     <div className="page-container">
-      {userTokenLocalStorage && (
+      {isAuth && (
         <>
           {status === "loading" && <div>Loading data...</div>}
           {status === "error" && <div>Error fetching data</div>}
@@ -70,7 +76,7 @@ export const User: React.FC<Props> = (props) => {
           )}
         </>
       )}
-      {!userTokenLocalStorage && <Redirect to="/login" />}
+      {!isAuth && <Redirect to="/login" />}
     </div>
   );
 };

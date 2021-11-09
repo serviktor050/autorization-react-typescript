@@ -6,15 +6,35 @@ import { Time } from "./Time";
 import { GoogleSignIn } from "../components/GoogleSignIn";
 
 export const Navbar: React.FC = () => {
-  const { removeLogin } = useLoginContext();
-
   const userTokenLocalStorage: string = JSON.parse(
     JSON.stringify(localStorage.getItem("token"))
   );
 
+  const googleIdLocalStorage: string = JSON.parse(
+    JSON.stringify(localStorage.getItem("googleId"))
+  );
+
+  const isAuth = userTokenLocalStorage || googleIdLocalStorage;
+
+  const { removeLogin } = useLoginContext();
+
   return (
     <>
-      {userTokenLocalStorage && (
+      {!isAuth && (
+        <nav>
+          <div className="nav-wrapper #0288d1 light-blue darken-2">
+            <NavLink to="/" className="brand-logo">
+              TS Tutorial
+            </NavLink>
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
+              <li>
+                <GoogleSignIn />
+              </li>
+            </ul>
+          </div>
+        </nav>
+      )}
+      {isAuth && (
         <nav>
           <div className="nav-wrapper #0288d1 light-blue darken-2">
             <NavLink to="/" className="brand-logo">
@@ -53,21 +73,6 @@ export const Navbar: React.FC = () => {
                 >
                   Go away
                 </NavLink>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      )}
-
-      {!userTokenLocalStorage && (
-        <nav>
-          <div className="nav-wrapper #0288d1 light-blue darken-2">
-            <NavLink to="/" className="brand-logo">
-              TS Tutorial
-            </NavLink>
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
-              <li>
-                <GoogleSignIn />
               </li>
             </ul>
           </div>

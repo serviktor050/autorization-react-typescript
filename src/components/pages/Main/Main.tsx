@@ -8,9 +8,15 @@ export const Main: React.FC = () => {
     JSON.stringify(localStorage.getItem("token"))
   );
 
+  const googleIdLocalStorage: string = JSON.parse(
+    JSON.stringify(localStorage.getItem("googleId"))
+  );
+
+  const isAuth = userTokenLocalStorage || googleIdLocalStorage;
+
   return (
     <div className="page-container">
-      {userTokenLocalStorage && (
+      {isAuth && (
         <>
           <h1>Main Page</h1>
           <p>
@@ -66,7 +72,7 @@ export const Main: React.FC = () => {
           </p>
         </>
       )}
-      {!userTokenLocalStorage && <Redirect to="/login" />}
+      {!isAuth && <Redirect to="/login" />}
     </div>
   );
 };

@@ -26,6 +26,12 @@ export const Users: React.FC<Props> = (props) => {
     JSON.stringify(localStorage.getItem("token"))
   );
 
+  const googleIdLocalStorage: string = JSON.parse(
+    JSON.stringify(localStorage.getItem("googleId"))
+  );
+
+  const isAuth = userTokenLocalStorage || googleIdLocalStorage;
+
   let pageNumber: string = props.location.search.substr(6);
 
   const [page, setPage] = useState(pageNumber || 1);
@@ -82,7 +88,7 @@ export const Users: React.FC<Props> = (props) => {
 
   return (
     <div className="page-container">
-      {userTokenLocalStorage && (
+      {isAuth && (
         <>
           <h1>Users</h1>
           {status === "loading" && <div>Loading data...</div>}
@@ -137,8 +143,7 @@ export const Users: React.FC<Props> = (props) => {
           )}
         </>
       )}
-
-      {!userTokenLocalStorage && <Redirect to="/login" />}
+      {!isAuth && <Redirect to="/login" />}
     </div>
   );
 };

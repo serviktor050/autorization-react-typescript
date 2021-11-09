@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
+
 import { TodoForm } from "../../Todos/TodoForm";
 import { TodoList } from "../../Todos/TodoList";
 import { ITodo } from "../../../intefaces";
@@ -9,6 +11,12 @@ export const Todos: React.FC = () => {
   const userTokenLocalStorage: string = JSON.parse(
     JSON.stringify(localStorage.getItem("token"))
   );
+
+  const googleIdLocalStorage: string = JSON.parse(
+    JSON.stringify(localStorage.getItem("googleId"))
+  );
+
+  const isAuth = userTokenLocalStorage || googleIdLocalStorage;
 
   const [todos, setTodos] = useState<ITodo[]>([]);
 
@@ -55,7 +63,7 @@ export const Todos: React.FC = () => {
 
   return (
     <div className="page-container">
-      {userTokenLocalStorage && (
+      {isAuth && (
         <>
           <h1>Todos</h1>
           <TodoForm onAdd={addHandlerTodo} />
@@ -67,12 +75,7 @@ export const Todos: React.FC = () => {
         </>
       )}
 
-      {!userTokenLocalStorage && (
-        <>
-          <h1>Main Page</h1>
-          <p>Go through authorization!</p>
-        </>
-      )}
+      {!isAuth && <Redirect to="/login" />}
     </div>
   );
 };

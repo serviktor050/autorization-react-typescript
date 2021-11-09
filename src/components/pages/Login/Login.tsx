@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { useMutation } from "react-query";
 
 import { IForm } from "../../../intefaces";
@@ -25,13 +25,27 @@ export const Login: React.FC = () => {
   const [form, setForm] = useState<IForm>({ email: "", password: "" });
   const mutation = useMutation(fetchLogin);
 
+  const googleIdLocalStorage: string = JSON.parse(
+    JSON.stringify(localStorage.getItem("googleId"))
+  );
+
   const { dispatch } = useLoginContext();
+  const history = useHistory();
 
   useEffect(() => {
     if (mutation.data) {
       dispatch({ type: ADD_LOGIN, payload: mutation.data.token });
     }
-  }, [dispatch, mutation.isSuccess, mutation.data]);
+    if (googleIdLocalStorage) {
+      history.push("/");
+    }
+  }, [
+    dispatch,
+    mutation.isSuccess,
+    mutation.data,
+    history,
+    googleIdLocalStorage,
+  ]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;

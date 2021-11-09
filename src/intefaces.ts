@@ -7,8 +7,10 @@ export interface IForm {
 
 export interface ILoginContext {
   userToken: string;
+  googleId: string;
   addLogin: (token: string) => void;
   removeLogin: () => void;
+  addGoogleId: (googleId: string) => void;
   dispatch:
     | Dispatch<{
         type: string;

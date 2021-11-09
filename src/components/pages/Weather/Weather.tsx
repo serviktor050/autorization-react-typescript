@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import { Redirect } from "react-router-dom";
 
 import { apiKeyForWeather } from "../../../consts";
 import { IQueryKey } from "../../../intefaces";
@@ -12,6 +13,11 @@ export const Weather: React.FC = () => {
     JSON.stringify(localStorage.getItem("token"))
   );
 
+  const googleIdLocalStorage: string = JSON.parse(
+    JSON.stringify(localStorage.getItem("googleId"))
+  );
+
+  const isAuth = userTokenLocalStorage || googleIdLocalStorage;
   const { city } = useWeatherContext();
 
   const fetchWeather = async (key: IQueryKey) => {
@@ -25,7 +31,7 @@ export const Weather: React.FC = () => {
 
   return (
     <div className="page-container">
-      {userTokenLocalStorage && (
+      {isAuth && (
         <>
           <h1>Weather</h1>
           <p>You can find out the weather in any city in the world.</p>
@@ -36,12 +42,7 @@ export const Weather: React.FC = () => {
         </>
       )}
 
-      {!userTokenLocalStorage && (
-        <>
-          <h1>Main Page</h1>
-          <p>Go through authorization!</p>
-        </>
-      )}
+      {!isAuth && <Redirect to="/login" />}
     </div>
   );
 };
