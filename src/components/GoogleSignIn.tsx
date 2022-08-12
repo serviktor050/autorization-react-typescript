@@ -12,7 +12,7 @@ export const GoogleSignIn: React.FC = () => {
         clientId={`${yourClientID}`}
         buttonText="Login"
         onSuccess={(response) => {
-          console.log("Done");
+          console.log(response);
           if ("googleId" in response) {
             if (response.googleId) {
               addGoogleId(response.googleId);
